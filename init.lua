@@ -13,22 +13,22 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     { 
-	"catppuccin/nvim",
+    	"catppuccin/nvim",
         name = "catppuccin",
-	priority = 1000
+	    priority = 1000
     },
     {
-	"nvim-treesitter/nvim-treesitter"
+    	"nvim-treesitter/nvim-treesitter"
     },
     {
-	"nvim-lua/plenary.nvim"
+	    "nvim-lua/plenary.nvim"
     },
     {
         "nvim-telescope/telescope.nvim",
-	tag = "0.1.5",
-	dependecies = {
-	    "nvim-lua/plenary.nvim"
-	}
+	    tag = "0.1.5",
+    	dependecies = {
+	        "nvim-lua/plenary.nvim"
+    	}
     },
     {
         "tpope/vim-fugitive"
