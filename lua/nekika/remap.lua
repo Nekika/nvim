@@ -7,3 +7,5 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "[b", vim.cmd.bpreviou)
 vim.keymap.set("n", "]b", vim.cmd.bnext)
+vim.keymap.set("n", "[w", "<C-w>W")
+vim.keymap.set("n", "]w", "<C-w>w")
