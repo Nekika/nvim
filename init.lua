@@ -18,7 +18,13 @@ require("lazy").setup({
 	    priority = 1000
     },
     {
-        "neovim/nvim-lspconfig"
+      "neovim/nvim-lspconfig"
+    },
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = {
+        'nvim-tree/nvim-web-devicons'
+      }
     },
     {
     	"nvim-treesitter/nvim-treesitter"
