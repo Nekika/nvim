@@ -21,12 +21,9 @@ require("lazy").setup({
     	"nvim-treesitter/nvim-treesitter"
     },
     {
-	    "nvim-lua/plenary.nvim"
-    },
-    {
         "nvim-telescope/telescope.nvim",
 	    tag = "0.1.5",
-    	dependecies = {
+    	dependencies = {
 	        "nvim-lua/plenary.nvim"
     	}
     },
