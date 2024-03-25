@@ -26,6 +26,12 @@ require("lspconfig").lua_ls.setup({
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
+    vim.api.nvim_create_autocmd({ "BufWrite", "BufWritePre" }, {
+      callback = function(_)
+        vim.lsp.buf.format()
+      end
+    })
+
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = args.buf })
     vim.keymap.set("n", "gd", vim.lsp.buf.definition)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
