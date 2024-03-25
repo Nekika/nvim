@@ -24,6 +24,8 @@ require("lspconfig").lua_ls.setup({
   }
 })
 
+require("lspconfig").zls.setup({})
+
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     vim.api.nvim_create_autocmd({ "BufWrite", "BufWritePre" }, {
