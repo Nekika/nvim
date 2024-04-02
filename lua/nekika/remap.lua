@@ -21,4 +21,8 @@ vim.keymap.set("n", "]e", vim.diagnostic.goto_next)
 vim.keymap.set("n", "[w", "<C-w>W")
 vim.keymap.set("n", "]w", "<C-w>w")
 
+vim.keymap.set("n", "<ESC><ESC>", function()
+  vim.cmd.noh()
+end)
+
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>")
