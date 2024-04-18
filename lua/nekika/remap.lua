@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>p", vim.cmd.Ex)
 
+vim.keymap.set("n", "<leader>h", vim.cmd.noh)
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
@@ -13,9 +15,5 @@ vim.keymap.set("n", "]e", function() vim.diagnostic.goto_next({ severity = vim.d
 
 vim.keymap.set("n", "[w", "<C-w>W")
 vim.keymap.set("n", "]w", "<C-w>w")
-
-vim.keymap.set("n", "<ESC><ESC>", function()
-  vim.cmd.noh()
-end)
 
 vim.keymap.set("t", "<ESC><ESC>", "<C-\\><C-n>")
