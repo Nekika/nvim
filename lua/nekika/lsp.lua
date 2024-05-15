@@ -33,6 +33,7 @@ local function create_lsp_keymaps(args)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = args.buf })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition)
   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+  vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format)
 end
 
 vim.api.nvim_create_autocmd('LspAttach', {
