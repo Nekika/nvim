@@ -64,6 +64,17 @@ require("lspconfig").zls.setup({
   capabilities = capabilities,
 })
 
+local function create_lsp_autocmds(args)
+  local client = vim.lsp.get_client_by_id(args.data.client_id)
+  if client ~= nil and client.name == "gopls" then
+    vim.api.nvim_create_autocmd("BufWrite", {
+      callback = function(_)
+        vim.lsp.buf.format()
+      end
+    })
+  end
+end
+
 local function create_lsp_keymaps(args)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = args.buf })
   vim.keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -71,8 +82,9 @@ local function create_lsp_keymaps(args)
   vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format)
 end
 
-vim.api.nvim_create_autocmd('LspAttach', {
+vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
+    create_lsp_autocmds(args)
     create_lsp_keymaps(args)
   end,
 })
