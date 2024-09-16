@@ -8,6 +8,10 @@ require("lspconfig").cssls.setup({
   capabilities = capabilities,
 })
 
+require("lspconfig").dockerls.setup({
+  capabilities = capabilities,
+})
+
 require("lspconfig").elixirls.setup({
   capabilities = capabilities,
   cmd = { "/usr/local/lib/elixir-ls/language_server.sh" }
