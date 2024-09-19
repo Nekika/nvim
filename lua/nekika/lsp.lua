@@ -64,6 +64,10 @@ require("lspconfig").rust_analyzer.setup({
   capabilities = capabilities,
 })
 
+require("lspconfig").svelte.setup({
+  capabilities = capabilities,
+})
+
 require("lspconfig").ts_ls.setup({
   capabilities = capabilities,
 })
