@@ -49,9 +49,6 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim"
     }
   },
-  {
-    "tpope/vim-fugitive"
-  }
 })
 
 require("nekika")
