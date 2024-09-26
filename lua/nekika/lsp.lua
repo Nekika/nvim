@@ -2,43 +2,25 @@
 -- LSP configuration
 --
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+require("lspconfig").cssls.setup({})
 
-require("lspconfig").cssls.setup({
-  capabilities = capabilities,
-})
-
-require("lspconfig").dockerls.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").dockerls.setup({})
 
 require("lspconfig").elixirls.setup({
-  capabilities = capabilities,
   cmd = { "/usr/local/lib/elixir-ls/language_server.sh" }
 })
 
-require("lspconfig").eslint.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").eslint.setup({})
 
-require("lspconfig").gleam.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").gleam.setup({})
 
-require("lspconfig").gopls.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").gopls.setup({})
 
-require("lspconfig").html.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").html.setup({})
 
-require("lspconfig").jsonls.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").jsonls.setup({})
 
 require("lspconfig").lua_ls.setup({
-  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -60,21 +42,13 @@ require("lspconfig").lua_ls.setup({
   }
 })
 
-require("lspconfig").rust_analyzer.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").rust_analyzer.setup({})
 
-require("lspconfig").svelte.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").svelte.setup({})
 
-require("lspconfig").ts_ls.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").ts_ls.setup({})
 
-require("lspconfig").zls.setup({
-  capabilities = capabilities,
-})
+require("lspconfig").zls.setup({})
 
 local function create_lsp_autocmds(args)
   local client = vim.lsp.get_client_by_id(args.data.client_id)
