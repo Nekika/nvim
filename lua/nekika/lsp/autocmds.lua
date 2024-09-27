@@ -56,7 +56,7 @@ local function setup_keymaps(event)
   keymap('n', '<F6>', vim.lsp.buf.rename)
 
   -- List code actions
-  keymap('n', '<F2>', vim.lsp.buf.code_action)
+  keymap({ 'i', 'n' }, '<F2>', vim.lsp.buf.code_action)
 end
 
 local function on_attach(event)
