@@ -4,5 +4,6 @@ require("nekika/set")
 
 require("nekika/colorscheme")
 require("nekika/lualine")
+require("nekika/refactoring")
 require("nekika/telescope")
 require("nekika/treesitter")
