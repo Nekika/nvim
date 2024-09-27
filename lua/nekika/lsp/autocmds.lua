@@ -26,12 +26,6 @@ local function setup_autoformat(event)
 end
 
 local function setup_keymaps(event)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = event.buf })
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-  vim.keymap.set("n", "<leader>cr", vim.lsp.buf.references)
-
-
   local keymap = function(mode, lhs, rhs)
     local opts = { buffer = event.buf }
     vim.keymap.set(mode, lhs, rhs, opts)
