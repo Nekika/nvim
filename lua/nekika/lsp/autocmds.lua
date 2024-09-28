@@ -43,12 +43,6 @@ local function setup_keymaps(event)
   -- Go to declaration
   keymap('n', 'gD', vim.lsp.buf.declaration)
 
-  -- Lists implementations
-  keymap('n', 'gi', vim.lsp.buf.implementation)
-
-  -- Lists references
-  keymap('n', 'gr', vim.lsp.buf.references)
-
   -- Go to type definition
   keymap('n', 'gt', vim.lsp.buf.type_definition)
 
