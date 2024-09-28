@@ -26,31 +26,18 @@ local function setup_autoformat(event)
 end
 
 local function setup_keymaps(event)
-  local keymap = function(mode, lhs, rhs)
-    local opts = { buffer = event.buf }
+  local keymap = function(mode, lhs, rhs, desc)
+    local opts = { buffer = event.buf, desc = desc }
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 
-  -- Trigger completion
-  keymap('i', '<C-CR>', '<C-x><C-o>')
-
-  -- Display documentation
-  keymap('n', 'K', vim.lsp.buf.hover)
-
-  -- Go to the definition
-  keymap('n', 'gd', vim.lsp.buf.definition)
-
-  -- Go to declaration
-  keymap('n', 'gD', vim.lsp.buf.declaration)
-
-  -- Go to type definition
-  keymap('n', 'gt', vim.lsp.buf.type_definition)
-
-  -- Renames all references
-  keymap('n', '<F6>', vim.lsp.buf.rename)
-
-  -- List code actions
-  keymap({ 'i', 'n' }, '<F2>', vim.lsp.buf.code_action)
+  keymap('i', '<C-CR>', '<C-x><C-o>', 'Trigger completion')
+  keymap('n', 'K', vim.lsp.buf.hover, 'Display documentation')
+  keymap('n', 'gd', vim.lsp.buf.definition, 'Go to the definition')
+  keymap('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration')
+  keymap('n', 'gt', vim.lsp.buf.type_definition, 'Go to type definition')
+  keymap('n', '<F6>', vim.lsp.buf.rename, 'Rename all references')
+  keymap({ 'i', 'n' }, '<F2>', vim.lsp.buf.code_action, 'List code actions')
 end
 
 local function on_attach(event)
@@ -58,6 +45,6 @@ local function on_attach(event)
   setup_keymaps(event)
 end
 
-vim.api.nvim_create_autocmd("LspAttach", {
+vim.api.nvim_create_autocmd('LspAttach', {
   callback = on_attach
 })
