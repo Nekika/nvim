@@ -21,6 +21,11 @@ vim.keymap.set('n', ']e', function() vim.diagnostic.goto_next({ severity = vim.d
 vim.keymap.set('n', '[d', function() vim.diagnostic.goto_prev() end, { desc = 'Go to previous diagnostic' })
 vim.keymap.set('n', ']d', function() vim.diagnostic.goto_next() end, { desc = 'Go to next diagnostic' })
 
+vim.keymap.set('n', '<leader>tc', vim.cmd.tabclose, { desc = "Close current tab" })
+vim.keymap.set('n', '<leader>tn', vim.cmd.tabnew, { desc = "Create new tab" })
+vim.keymap.set('n', '[t', vim.cmd.tabprevious, { desc = "Go to previous tab" })
+vim.keymap.set('n', ']t', vim.cmd.tabnext, { desc = "Go to next tab" })
+
 vim.keymap.set('n', '[w', '<C-w>W')
 vim.keymap.set('n', ']w', '<C-w>w')
 
