@@ -6,4 +6,4 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 
 -- Netrw
-vim.g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 1
