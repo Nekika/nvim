@@ -1,3 +1,6 @@
+local coq = require("coq")
+local lspconfig = require("lspconfig")
+
 local configs = {
   { name = "cssls" },
   { name = "dockerls" },
@@ -42,7 +45,7 @@ local configs = {
 
 local function setup(config)
   config.options = config.options or {}
-  require("lspconfig")[config.name].setup(config.options)
+  lspconfig[config.name].setup(coq.lsp_ensure_capabilities(config.options))
 end
 
 for _, config in ipairs(configs) do

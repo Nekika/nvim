@@ -19,7 +19,17 @@ require("lazy").setup({
     priority = 1000
   },
   {
-    "neovim/nvim-lspconfig"
+    "neovim/nvim-lspconfig",
+    lazy = false,
+    dependencies = {
+      { "ms-jpq/coq_nvim",      branch = "coq" },
+      { "ms-jpq/coq.artifacts", branch = "artifacts" }
+    },
+    init = function()
+      vim.g.coq_settings = {
+        auto_start = "shut-up"
+      }
+    end
   },
   {
     'nvim-lualine/lualine.nvim',
